@@ -1,0 +1,18 @@
+---
+
+- name: Ensure fonts directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
+
+- name: Nerd font exists
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/RobotoMonoNerdFontMono-*"
+  register: nf_exists
+  ignore_errors: yes
+
+- name: Download nerd font
+  when: nf_exists is failed
+  ansible.builtin.unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/RobotoMono.zip
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes

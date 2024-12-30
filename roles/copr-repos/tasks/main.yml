@@ -1,0 +1,7 @@
+---
+
+- name: Download copr repos
+  become: yes
+  community.general.copr:
+    name: "{{ item }}"
+  loop: "{{ copr_repos }}"

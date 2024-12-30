@@ -1,0 +1,32 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: dotfiles_stow
+  author: idolize
+  description: Dotfile installation for UNIX/Linux using stow.
+  company: None
+  license: "license (BSD, MIT)"
+  min_ansible_version: "2.2"
+  platforms:
+    - name: GenericUNIX
+      versions:
+        - all
+    - name: GenericBSD
+      versions:
+        - all
+    - name: GenericLinux
+      versions:
+        - all
+    - name: macOS
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+  galaxy_tags:
+    - development
+    - system
+    - dotfiles
+    - stow
+    - configuration

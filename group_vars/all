@@ -1,0 +1,65 @@
+# The 'rpmfusion' role #
+###############################
+rpmfusion_free_repository: true
+rpmfusion_nonfree_repository: true
+
+# The 'copr-repos' role #
+###############################
+copr_repos:
+  - atim/lazygit
+  - atim/starship
+  - awood/bat-extras
+
+# The 'install-packages' role #
+###############################
+add_packages:
+  - alacritty
+  - bat
+  - bat-extras
+  - btop
+  - cowsay
+  - eza
+  - f33-backgrounds-gnome
+  - fd-find
+  - fortune-mod
+  - fzf
+  - gnome-extensions-app
+  - gnome-tweaks
+  - google-roboto-*
+  - lazygit
+  - lolcat
+  - neovim
+  - ripgrep
+  - starship
+  - stow
+  - trash-cli
+  - tmux
+  - zoxide
+  - zsh
+
+rust_packages:
+  - atuin
+  - vivid
+
+flatpak_packages:
+  - com.slack.Slack
+
+# The 'gnome_extensions' role #
+###############################
+gnome_extension_ids:
+  - 3843 # just-perfection
+  - 5219 # tophat
+  - 7 # removable drive menu
+  - 615 # appindicator
+  # - 1031 # TopIcons Plus by phocean
+
+# The 'compile-gschemas' role #
+###############################
+gschemas_dirs:
+  - /home/john/.local/share/gnome-shell/extensions/just-perfection-desktop@just-perfection/schemas/
+
+
+# The 'dotfiles_stow' role #
+###############################
+dotfiles_repo: https://github.com/b234r/Dotfiles
+dotfiles_conflict_mode: adopt_and_reset

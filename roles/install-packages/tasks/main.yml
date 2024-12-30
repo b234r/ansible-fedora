@@ -1,0 +1,37 @@
+---
+ 
+- name: Install RPM Packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ add_packages }}"
+
+- name: Install Rustup
+  become: true
+  package:
+    name: rustup
+    state: present 
+
+- name: Install Rust
+  become: true
+  shell: rustup-init -y
+
+- name: Install Rust Packages
+  community.general.cargo:
+    name: "{{ item }}"
+    executable: /home/john/.cargo/bin/cargo
+  loop: "{{ rust_packages }}"
+
+- name: Add the Flathub Flatpak Repository
+  become: true
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Flatpak Packages
+  community.general.flatpak:
+    name:  "{{ item }}"
+    state: present
+  loop: "{{ flatpak_packages }}"

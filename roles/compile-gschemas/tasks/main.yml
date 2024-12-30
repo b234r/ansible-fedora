@@ -1,0 +1,6 @@
+---
+
+- name: Compile gschemas
+  become: yes
+  shell: "glib-compile-schemas {{ item }}"
+  loop: "{{ gschemas_dirs }}"

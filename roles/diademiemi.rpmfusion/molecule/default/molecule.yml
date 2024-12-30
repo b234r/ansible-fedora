@@ -1,0 +1,42 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: el8
+    image: docker.io/geerlingguy/docker-rockylinux8-ansible
+    pre_build_image: true
+    systemd: always
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    cgroupns_mode: host
+    privileged: true
+    command: "/usr/sbin/init"
+  - name: el9
+    image: docker.io/geerlingguy/docker-rockylinux9-ansible
+    pre_build_image: true
+    systemd: always
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    cgroupns_mode: host
+    privileged: true
+    command: "/usr/sbin/init"
+  - name: fedora40
+    image: docker.io/geerlingguy/docker-fedora40-ansible
+    pre_build_image: true
+    systemd: always
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    cgroupns_mode: host
+    privileged: true
+    command: "/usr/sbin/init"
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_LOCAL_TEMP: "${HOME}/.ansible/tmp"
+    ANSIBLE_REMOTE_TMP: /tmp/ansible
+verifier:
+  name: ansible
+
+...
