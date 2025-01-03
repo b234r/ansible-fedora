@@ -140,6 +140,14 @@ dconf_settings:
   - key: '/org/gnome/shell/world-clocks/locations' 
     value: "[<(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>, <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>, <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>]"
 
+  - key: '/org/gonme/shell/keybindings/switch-to-application-1'
+    value: "['<Super>t']"
+  - key: '/org/gnome/shell/keybindings/switch-to-application-2'
+    value: "['<Super>f']"
+  - key: '/org/gnome/shell/keybindings/switch-to-application-3'
+    value: "['<Super>p']"
+  - key: '/org/gnome/shell/keybindings/switch-to-application-4'
+    value: "['<Super>m']"
   - key: '/org/gnome/desktop/wm/keybindings/close'
     value: "['<Super>w']"
   - key: '/org/gnome/desktop/wm/keybindings/cycle-windows'
@@ -172,14 +180,6 @@ dconf_settings:
     value: "@as []"
   - key: '/org/gnome/mutter/wayland/keybindings/restore-shortcuts'
     value: "@as []"
-  - key: '/org/gonme/shell/keybindings/switch-to-application-1'
-    value: "['<Super>Return']"
-  - key: '/org/gnome/shell/keybindings/switch-to-application-2'
-    value: "['<Super>f']"
-  - key: '/org/gnome/shell/keybindings/switch-to-application-3'
-    value: "['<Super>p']"
-  - key: '/org/gnome/shell/keybindings/switch-to-application-4'
-    value: "['<Super>m']"
   - key: '/org/gnome/shell/keybindings/toggle-application-view'
     value: "@as []"
   - key: '/org/gnome/shell/keybindings/toggle-message-tray' 
