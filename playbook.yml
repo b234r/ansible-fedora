@@ -2,7 +2,7 @@
 
 - hosts: all
   roles:
-    #- { role: diademiemi.rpmfusion }
+    - { role: diademiemi.rpmfusion }
     - { role: copr-repos }
     - { role: install-packages }
     - { role: jaredhocutt.gnome_extensions }
@@ -10,3 +10,4 @@
     - { role: idolize.dotfiles_stow }
     - { role: install-nerd-fonts }
     - { role: user-setup }
+    - { role: dconf-settings }
