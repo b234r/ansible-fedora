@@ -14,7 +14,6 @@
     state: present 
 
 - name: Install Rust
-  become: true
   shell: rustup-init -y
 
 - name: Install Rust Packages
