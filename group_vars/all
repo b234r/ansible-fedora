@@ -70,6 +70,7 @@ gschemas_dirs:
 ###############################
 dotfiles_repo: https://github.com/b234r/Dotfiles
 dotfiles_conflict_mode: adopt_and_reset
+dotfiles_repo_local_destination: ~/Repos/b234r/Dotfiles
 
 # The 'dconf-settings' module #
 ###############################
