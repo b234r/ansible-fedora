@@ -13,6 +13,7 @@ copr_repos:
 # The 'install-packages' role #
 ###############################
 add_packages:
+  - adw-gtk3-theme
   - alacritty
   - bat
   - bat-extras
@@ -22,10 +23,13 @@ add_packages:
   - eza
   - f33-backgrounds-gnome
   - fd-find
+  - mozilla-fira-fonts
+  - mozilla-fira-mono-fonts
+  - mozilla-fira-sans-fonts
   - fortune-mod
   - fzf
+  - git-delta
   - golang
-  - gnome-shell-extension-gpaste
   - gnome-tweaks
   - google-roboto-*
   - lazygit
@@ -37,6 +41,7 @@ add_packages:
   - stow
   - trash-cli
   - tmux
+  - wireguard-tools
   - zoxide
   - zsh
 
@@ -59,6 +64,7 @@ gnome_extension_ids:
   - 3843 # just-perfection
   - 5219 # tophat
   - 3193 # blur my shell 
+  - 10   # window navigator
 
 # The 'compile-gschemas' role #
 ###############################
@@ -75,7 +81,7 @@ dotfiles_repo_local_destination: ~/Repos/b234r/Dotfiles
 # The 'dconf-settings' module #
 ###############################
 dconf_settings:
-  - key: '/org/gnome/GPaste/show-history'
+  - key: '/org/gnome/GPaste/launch-ui'
     value: "'<Super>h'"
   - key: '/org/gnome/GPaste/max-displayed-history-size'
     value: 'uint64 15'
