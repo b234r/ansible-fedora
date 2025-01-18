@@ -5,14 +5,38 @@
     path: "{{ lookup('env', 'HOME') }}/.fonts"
     state: directory
 
-- name: Nerd font exists
+- name: Roboto nerd font exists
   shell: "ls {{ lookup('env', 'HOME') }}/.fonts/RobotoMonoNerdFontMono-*"
-  register: nf_exists
+  register: rnf_exists
   ignore_errors: yes
 
-- name: Download nerd font
-  when: nf_exists is failed
+- name: Download Roboto nerd font
+  when: rnf_exists is failed
   ansible.builtin.unarchive:
     src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/RobotoMono.zip
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes
+
+- name: Victor nerd font exists
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/VictorMono*"
+  register: vnf_exists
+  ignore_errors: yes
+
+- name: Download Victor nerd font
+  when: vnf_exists is failed
+  ansible.builtin.unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip 
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes
+
+- name: FiraCode nerd font exists
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/FiraCode*"
+  register: fnf_exists
+  ignore_errors: yes
+
+- name: Download FiraCode nerd font
+  when: fnf_exists is failed
+  ansible.builtin.unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
     dest: "{{ lookup('env', 'HOME') }}/.fonts/"
     remote_src: yes
