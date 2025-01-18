@@ -22,6 +22,12 @@
     executable: /home/john/.cargo/bin/cargo
   loop: "{{ rust_packages }}"
 
+- name: Install NPM Packages
+  community.general.npm:
+    name: "{{ item }}"
+    global: true
+  loop: "{{ npm_packages }}"
+
 - name: Add the Flathub Flatpak Repository
   become: true
   community.general.flatpak_remote:

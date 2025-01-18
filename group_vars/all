@@ -32,6 +32,7 @@ add_packages:
   - golang
   - gnome-tweaks
   - google-roboto-*
+  - gopls
   - lazygit
   - lolcat
   - neovim
@@ -48,6 +49,11 @@ add_packages:
 rust_packages:
   - atuin
   - vivid
+  - stylua
+
+npm_packages:
+  - graphql-language-service-server 
+  - intelephense
 
 flatpak_packages:
   - com.getpostman.Postman
