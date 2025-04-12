@@ -12,6 +12,14 @@ copr_repos:
 
 # The 'install-packages' role #
 ###############################
+add_repos:
+  - name: Hashicorp
+    description: Hashicorp
+    baseurl: https://rpm.releases.hashicorp.com/fedora/$releasever/$basearch/stable
+    enabled: 1
+    gpgcheck: 1
+    gpgkey: https://rpm.releases.hashicorp.com/gpg
+    
 add_packages:
   - adw-gtk3-theme
   - alacritty
@@ -23,16 +31,16 @@ add_packages:
   - eza
   - f33-backgrounds-gnome
   - fd-find
-  - mozilla-fira-fonts
   - mozilla-fira-mono-fonts
   - mozilla-fira-sans-fonts
   - fortune-mod
   - fzf
-  - git-delta
+  - git-delta 
   - golang
   - gnome-tweaks
   - google-roboto-*
   - gopls
+  - just
   - lazygit
   - lolcat
   - neovim
@@ -43,17 +51,17 @@ add_packages:
   - trash-cli
   - tmux
   - wireguard-tools
+  - wordnet
   - zoxide
   - zsh
 
 rust_packages:
   - atuin
   - vivid
-  - stylua
+  - tree-sitter-cli
 
-npm_packages:
-  - graphql-language-service-server 
-  - intelephense
+go_packages:
+  - github.com/jesseduffield/lazydocker@latest
 
 flatpak_packages:
   - com.getpostman.Postman
@@ -69,7 +77,7 @@ flatpak_packages:
 gnome_extension_ids:
   - 3843 # just-perfection
   - 5219 # tophat
-  - 3193 # blur my shell 
+  - 3193 # blur my shell
   - 10   # window navigator
 
 # The 'compile-gschemas' role #
@@ -80,9 +88,9 @@ gschemas_dirs:
 
 # The 'dotfiles_stow' role #
 ###############################
-dotfiles_repo: https://github.com/b234r/Dotfiles
+dotfiles_repo: https://github.com/b234r/dotfiles
 dotfiles_conflict_mode: adopt_and_reset
-dotfiles_repo_local_destination: ~/Repos/b234r/Dotfiles
+dotfiles_repo_local_destination: ~/Repos/b234r/dotfiles
 
 # The 'dconf-settings' module #
 ###############################
@@ -91,65 +99,65 @@ dconf_settings:
     value: "'<Super>h'"
   - key: '/org/gnome/GPaste/max-displayed-history-size'
     value: 'uint64 15'
-  - key: '/org/gnome/Weather/locations' 
+  - key: '/org/gnome/Weather/locations'
     value: "[<(uint32 2, <('Luke Air Force Base / Phoenix', 'KLUF', false, [(0.58526707001766765, -1.9614591852151964)], @a(dd) [])>)>]"
-  - key: '/org/gnome/clocks/world-clocks' 
-    value: "[{'location': <(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>}, {'location': <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>}, {'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]" 
-  - key: '/org/gnome/desktop/interface/accent-color' 
-    value: "'yellow'" 
-  - key: '/org/gnome/desktop/interface/color-scheme' 
+  - key: '/org/gnome/clocks/world-clocks'
+    value: "[{'location': <(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>}, {'location': <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>}, {'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
+  - key: '/org/gnome/desktop/interface/accent-color'
+    value: "'yellow'"
+  - key: '/org/gnome/desktop/interface/color-scheme'
     value: "'prefer-dark'"
-  - key: '/org/gnome/desktop/interface/document-font-name' 
+  - key: '/org/gnome/desktop/interface/document-font-name'
     value: "'Roboto 11'"
-  - key: '/org/gnome/desktop/interface/enable-hot-corners' 
-    value: 'false' 
-  - key: '/org/gnome/desktop/interface/font-antialiasing' 
-    value: "'none'" 
-  - key: '/org/gnome/desktop/interface/font-name' 
+  - key: '/org/gnome/desktop/interface/enable-hot-corners'
+    value: 'false'
+  - key: '/org/gnome/desktop/interface/font-antialiasing'
+    value: "'none'"
+  - key: '/org/gnome/desktop/interface/font-name'
     value: "'Roboto 11'"
-  - key: '/org/gnome/desktop/interface/monospace-font-name' 
-    value: "'RobotoMono Nerd Font 16'" 
+  - key: '/org/gnome/desktop/interface/monospace-font-name'
+    value: "'RobotoMono Nerd Font 16'"
   - key: '/org/gnome/desktop/interface/show-battery-percentage'
     value: 'true'
-  - key: '/org/gnome/desktop/peripherals/touchpad/natural-scroll' 
-    value: 'false' 
-  - key: '/org/gnome/desktop/wm/preferences/focus-mode' 
-    value: "'mouse'" 
-  - key: '/org/gnome/mutter/edge-tiling' 
-    value: 'false' 
-  - key: '/org/gnome/shell/app-switcher/current-workspace-only' 
-    value: 'true' 
-  - key: '/org/gnome/shell/extensions/just-perfection/accessibility-menu' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/activities-button' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/dash' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/quick-settings-dark-mode' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/ripple-box' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/show-apps-button' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/startup-status' 
+  - key: '/org/gnome/desktop/peripherals/touchpad/natural-scroll'
+    value: 'false'
+  - key: '/org/gnome/desktop/wm/preferences/focus-mode'
+    value: "'mouse'"
+  - key: '/org/gnome/mutter/edge-tiling'
+    value: 'false'
+  - key: '/org/gnome/shell/app-switcher/current-workspace-only'
+    value: 'true'
+  - key: '/org/gnome/shell/extensions/just-perfection/accessibility-menu'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/activities-button'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/dash'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/quick-settings-dark-mode'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/ripple-box'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/show-apps-button'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/startup-status'
     value: 0
-  - key: '/org/gnome/shell/extensions/just-perfection/window-demands-attention-focus' 
-    value: 'true' 
-  - key: '/org/gnome/shell/extensions/just-perfection/window-maximized-on-create' 
-    value: 'true' 
-  - key: '/org/gnome/shell/extensions/just-perfection/workspace-peek' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/just-perfection/workspaces-in-app-grid' 
-    value: 'false' 
-  - key: '/org/gnome/shell/extensions/tophat/position-in-panel' 
-    value: "'leftedge'" 
+  - key: '/org/gnome/shell/extensions/just-perfection/window-demands-attention-focus'
+    value: 'true'
+  - key: '/org/gnome/shell/extensions/just-perfection/window-maximized-on-create'
+    value: 'true'
+  - key: '/org/gnome/shell/extensions/just-perfection/workspace-peek'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/just-perfection/workspaces-in-app-grid'
+    value: 'false'
+  - key: '/org/gnome/shell/extensions/tophat/position-in-panel'
+    value: "'leftedge'"
   - key: '/org/gnome/shell/favorite-apps'
     value: "['Alacritty.desktop', 'org.mozilla.firefox.desktop', 'com.getpostman.Postman.desktop', 'com.spotify.Client.desktop', 'com.slack.Slack.desktop']"
-  - key: '/org/gnome/shell/weather' 
-    value: "[<(uint32 2, <('Luke Air Force Base / Phoenix', 'KLUF', false, [(0.58526707001766765, -1.9614591852151964)], @a(dd) [])>)>]" 
-  - key: '/org/gnome/shell/world-clocks/locations' 
+  - key: '/org/gnome/shell/weather'
+    value: "[<(uint32 2, <('Luke Air Force Base / Phoenix', 'KLUF', false, [(0.58526707001766765, -1.9614591852151964)], @a(dd) [])>)>]"
+  - key: '/org/gnome/shell/world-clocks/locations'
     value: "[<(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>, <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>, <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>]"
 
   - key: '/org/gnome/shell/keybindings/switch-to-application-1'
@@ -196,6 +204,5 @@ dconf_settings:
     value: "@as []"
   - key: '/org/gnome/shell/keybindings/toggle-application-view'
     value: "@as []"
-  - key: '/org/gnome/shell/keybindings/toggle-message-tray' 
+  - key: '/org/gnome/shell/keybindings/toggle-message-tray'
     value: "['<Super>v']"
-
