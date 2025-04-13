@@ -9,6 +9,7 @@ copr_repos:
   - atim/lazygit
   - atim/starship
   - awood/bat-extras
+  - alternateved/eza
 
 # The 'install-packages' role #
 ###############################
@@ -104,7 +105,7 @@ dconf_settings:
   - key: '/org/gnome/clocks/world-clocks'
     value: "[{'location': <(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>}, {'location': <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>}, {'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
   - key: '/org/gnome/desktop/interface/accent-color'
-    value: "'yellow'"
+    value: "'slate'"
   - key: '/org/gnome/desktop/interface/color-scheme'
     value: "'prefer-dark'"
   - key: '/org/gnome/desktop/interface/document-font-name'
@@ -112,7 +113,7 @@ dconf_settings:
   - key: '/org/gnome/desktop/interface/enable-hot-corners'
     value: 'false'
   - key: '/org/gnome/desktop/interface/font-antialiasing'
-    value: "'none'"
+    value: "'grayscale'"
   - key: '/org/gnome/desktop/interface/font-name'
     value: "'Roboto 11'"
   - key: '/org/gnome/desktop/interface/monospace-font-name'
@@ -144,7 +145,7 @@ dconf_settings:
   - key: '/org/gnome/shell/extensions/just-perfection/window-demands-attention-focus'
     value: 'true'
   - key: '/org/gnome/shell/extensions/just-perfection/window-maximized-on-create'
-    value: 'true'
+    value: 'false'
   - key: '/org/gnome/shell/extensions/just-perfection/workspace-peek'
     value: 'false'
   - key: '/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show'
@@ -154,7 +155,7 @@ dconf_settings:
   - key: '/org/gnome/shell/extensions/tophat/position-in-panel'
     value: "'leftedge'"
   - key: '/org/gnome/shell/favorite-apps'
-    value: "['Alacritty.desktop', 'org.mozilla.firefox.desktop', 'com.getpostman.Postman.desktop', 'com.spotify.Client.desktop', 'com.slack.Slack.desktop']"
+    value: "['Alacritty.desktop', 'org.mozilla.firefox.desktop', 'com.getpostman.Postman.desktop', 'com.spotify.Client.desktop', 'com.slack.Slack.desktop', 'jetbrains-phpstorm-9b4fc065-17e9-488a-a9aa-8aceb4ce65aa.desktop']"
   - key: '/org/gnome/shell/weather'
     value: "[<(uint32 2, <('Luke Air Force Base / Phoenix', 'KLUF', false, [(0.58526707001766765, -1.9614591852151964)], @a(dd) [])>)>]"
   - key: '/org/gnome/shell/world-clocks/locations'
@@ -170,6 +171,8 @@ dconf_settings:
     value: "['<Super>m']"
   - key: '/org/gnome/shell/keybindings/switch-to-application-5'
     value: "['<Super>n']"
+  - key: '/org/gnome/shell/keybindings/switch-to-application-6'
+    value: "['<Super>i']"
   - key: '/org/gnome/desktop/wm/keybindings/close'
     value: "['<Super>w']"
   - key: '/org/gnome/desktop/wm/keybindings/cycle-windows'
