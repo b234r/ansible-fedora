@@ -1,16 +1,3 @@
-# The 'rpmfusion' role #
-###############################
-rpmfusion_free_repository: true
-rpmfusion_nonfree_repository: true
-
-# The 'copr-repos' role #
-###############################
-copr_repos:
-  - atim/lazygit
-  - atim/starship
-  - awood/bat-extras
-  - alternateved/eza
-
 # The 'install-packages' role #
 ###############################
 add_repos:
@@ -24,6 +11,7 @@ add_repos:
 add_packages:
   - adw-gtk3-theme
   - alacritty
+  - atuin
   - bat
   - bat-extras
   - btop
@@ -32,8 +20,6 @@ add_packages:
   - eza
   - f33-backgrounds-gnome
   - fd-find
-  - mozilla-fira-mono-fonts
-  - mozilla-fira-sans-fonts
   - fortune-mod
   - fzf
   - git-delta 
@@ -57,18 +43,18 @@ add_packages:
   - zsh
 
 rust_packages:
-  - atuin
   - vivid
-  - tree-sitter-cli
 
 go_packages:
   - github.com/jesseduffield/lazydocker@latest
 
 flatpak_packages:
+  - com.google.Chrome
   - com.getpostman.Postman
   - com.mattjakeman.ExtensionManager
   - com.slack.Slack
   - com.spotify.Client
+  - io.beekeeperstudio.Studio
   - dev.qwery.AddWater
   - org.videolan.VLC
   - hu.irl.cameractrls
@@ -97,7 +83,7 @@ dotfiles_repo_local_destination: ~/Repos/b234r/dotfiles
 ###############################
 dconf_settings:
   - key: '/org/gnome/GPaste/launch-ui'
-    value: "'<Super>h'"
+    value: "'<Super>p'"
   - key: '/org/gnome/GPaste/max-displayed-history-size'
     value: 'uint64 15'
   - key: '/org/gnome/Weather/locations'
@@ -105,7 +91,7 @@ dconf_settings:
   - key: '/org/gnome/clocks/world-clocks'
     value: "[{'location': <(uint32 2, <('Chennai', 'VOMM', true, [(0.22689280275926285, 1.3994631660730223)], [(0.22834723798482726, 1.4012084953250166)])>)>}, {'location': <(uint32 2, <('Coordinated Universal Time (UTC)', '@UTC', false, @a(dd) [], @a(dd) [])>)>}, {'location': <(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>}]"
   - key: '/org/gnome/desktop/interface/accent-color'
-    value: "'slate'"
+    value: "'green'"
   - key: '/org/gnome/desktop/interface/color-scheme'
     value: "'prefer-dark'"
   - key: '/org/gnome/desktop/interface/document-font-name'
@@ -155,7 +141,7 @@ dconf_settings:
   - key: '/org/gnome/shell/extensions/tophat/position-in-panel'
     value: "'leftedge'"
   - key: '/org/gnome/shell/favorite-apps'
-    value: "['Alacritty.desktop', 'org.mozilla.firefox.desktop', 'com.getpostman.Postman.desktop', 'com.spotify.Client.desktop', 'com.slack.Slack.desktop', 'jetbrains-phpstorm-9b4fc065-17e9-488a-a9aa-8aceb4ce65aa.desktop']"
+    value: "['Alacritty.desktop', 'com.google.Chrome.desktop', 'com.getpostman.Postman.desktop', 'com.spotify.Client.desktop', 'com.slack.Slack.desktop', 'io.beekeeperstudio.Studio.desktop']"
   - key: '/org/gnome/shell/weather'
     value: "[<(uint32 2, <('Luke Air Force Base / Phoenix', 'KLUF', false, [(0.58526707001766765, -1.9614591852151964)], @a(dd) [])>)>]"
   - key: '/org/gnome/shell/world-clocks/locations'
@@ -164,7 +150,7 @@ dconf_settings:
   - key: '/org/gnome/shell/keybindings/switch-to-application-1'
     value: "['<Super>t']"
   - key: '/org/gnome/shell/keybindings/switch-to-application-2'
-    value: "['<Super>f']"
+    value: "['<Super>i']"
   - key: '/org/gnome/shell/keybindings/switch-to-application-3'
     value: "['<Super>c']"
   - key: '/org/gnome/shell/keybindings/switch-to-application-4'
@@ -172,7 +158,7 @@ dconf_settings:
   - key: '/org/gnome/shell/keybindings/switch-to-application-5'
     value: "['<Super>n']"
   - key: '/org/gnome/shell/keybindings/switch-to-application-6'
-    value: "['<Super>i']"
+    value: "['<Super>b']"
   - key: '/org/gnome/desktop/wm/keybindings/close'
     value: "['<Super>w']"
   - key: '/org/gnome/desktop/wm/keybindings/cycle-windows'
